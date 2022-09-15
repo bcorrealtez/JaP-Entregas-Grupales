@@ -1,4 +1,3 @@
-# JaP-Entrega-Grupal-3
-Entrega grupal n°3 obligatoria
+# JaP Entregas Grupales
 
 © Bruno Correa - Evelyn Grigorio - Yandira Lopez
