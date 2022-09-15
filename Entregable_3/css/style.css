@@ -28,3 +28,7 @@ main {
 input::placeholder{
   text-align: center;
 }
+
+.card img {
+  object-fit: cover;
+}

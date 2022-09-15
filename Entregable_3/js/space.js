@@ -49,20 +49,35 @@ btn.addEventListener("click", (e)=>{
 })
 
 function htmlContentToAppend(links, data) {
+    /*return `
+    <div class= "col-4" id="contenedor">
+        <div class="list-group-item list-group-item-action">
+            <div class="col-12">
+                <img src="${links ? links[0].href: ''}" alt="" class="img-thumbnail"> 
+            </div>
+            <div >
+                <div class="mb-1 text-break">
+                    <h4>${data[0].title}</h4>
+                    <p class="description overflow-auto"> ${data[0].description} </p>
+                    <small class="text-muted"> ${data[0].date_created} </small>    
+                </div>
+            </div>
+        </div>
+    </div>
+    `
+*/
     return `
     <div class= "col-4" id="contenedor">
-    <div class="list-group-item list-group-item-action">
-                <div class="col-12">
-                 <img src="${links ? links[0].href: ''}" alt="" class="img-thumbnail"> 
-                 </div>
-                 <div >
-                    <div class="mb-1 text-break">
-                        <h4>${data[0].title}</h4>
-                        <p class="description overflow-auto"> ${data[0].description} </p>
-                        <small class="text-muted"> ${data[0].date_created} </small>    
-                    </div>
-                </div>
+        <div class="card mb-3">
+            <img src="${links ? links[0].href: ''}" class="card-img-top mx-auto">
+            <div class="card-body text-dark">
+                <h5 class="card-title">${data[0].title}</h5>
+                <p class="card-text">${data[0].description}</p>
+                <p class="card-text"><small class="text-muted">${data[0].date_created}</small></p>
+            </div>
+        </div>
     </div>
-    </div>
-    `} /*${links ? links[0].href: ''} valida si links está definido o no, 
+    `
+
+} /*${links ? links[0].href: ''} valida si links está definido o no, 
     si existe links devolve link[0].href, sino devolvé un string vacío */

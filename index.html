@@ -1,58 +1,51 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Buscador de imágenes de la NASA</title>
+<!doctype html>
+<html lang="en">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <body background="/img/fondo.jpg">
-    <main>
-      <div class="text-center container">
-        <div class="row py-lg-3">
-          <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw">Buscador de imágenes de la NASA</h1>
-            <br>
-            <input
-              type="search"
-              class="form-control"
-              name="buscar"
-              id="inputBuscar"
-              placeholder="Ej.: JUPITER"
-            />
-            <br>
-            <button class="btn btn-primary my-2" id="btnBuscar">
-              Buscar imágenes
-            </button>
-          </div>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <style>
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+  <main>
+    <div class="container vh-100">
+        <div class="row px-3 my-4 align-content-center">
+            <div class="col bg-light border rounded-3">
+                <div class="row ps-5 pt-2">
+                    <div class="col-9">
+                        <h2 class="mt-1">Entregable Grupal 3 - 18/09</h1>  
+                    </div>
+                    <div class="col pb-2">
+                        <div class="col">
+                            <a href="https://jovenesaprogramar.schoology.com/assignment/6259155975/info" target="_blank" class="badge bg-dark link-light w-100">Pautas Grupales</a>
+                        </div>
+                        <div class="col">
+                            <a href="Entregable_3/" class="badge bg-secondary link-light w-100">Actividad Grupal</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
+  </main>
 
-      <div class="container">
-        <div id="contenedor" class = "row"></div>
-      </div>
-    </main>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+  </script>
 
-    <footer class="text-muted py-3">
-      <div class="container">
-        <p class="float-end">
-          <a href="#">Volver arriba</a>
-        </p>
-        <p class="mb-1">
-          Este sitio forma parte de
-          <a href="https://jovenesaprogramar.edu.uy/" target="_blank">
-            Jovenes a Programar</a
-          >, y consume datos de
-          <a href="https://api.nasa.gov/" target="_blank"> api.nasa.gov</a>
-        </p>
-        <p class="mb-1">Generado con fines estrictamente educativos.</p>
-        <p>© Bruno Correa - Evelyn Grigorio - Yandira Lopez</p>
-      </div>
-    </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+    integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
+  </script>
+</body>
 
-    <script src="js/space.js"></script>
-  </body>
 </html>
