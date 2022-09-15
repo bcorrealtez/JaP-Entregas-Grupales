@@ -69,12 +69,16 @@ function htmlContentToAppend(links, data) {
     return `
     <div class= "col-4" id="contenedor">
         <div class="card mb-3">
-            <img src="${links ? links[0].href: ''}" class="card-img-top mx-auto">
+            <div class='imagecard bg-light'>
+                <img src="${links ? links[0].href: ''}">
+            </div>
+            
             <div class="card-body text-dark">
                 <h5 class="card-title">${data[0].title}</h5>
-                <p class="card-text">${data[0].description}</p>
-                <p class="card-text"><small class="text-muted">${data[0].date_created}</small></p>
+                <p class="card-text description">${data[0].description}</p>
+                
             </div>
+            <p class="card-text p-1 ps-3"><small class="text-muted">${data[0].date_created}</small></p>
         </div>
     </div>
     `
