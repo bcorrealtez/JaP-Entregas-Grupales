@@ -49,28 +49,11 @@ btn.addEventListener("click", (e)=>{
 })
 
 function htmlContentToAppend(links, data) {
-    /*return `
-    <div class= "col-4" id="contenedor">
-        <div class="list-group-item list-group-item-action">
-            <div class="col-12">
-                <img src="${links ? links[0].href: ''}" alt="" class="img-thumbnail"> 
-            </div>
-            <div >
-                <div class="mb-1 text-break">
-                    <h4>${data[0].title}</h4>
-                    <p class="description overflow-auto"> ${data[0].description} </p>
-                    <small class="text-muted"> ${data[0].date_created} </small>    
-                </div>
-            </div>
-        </div>
-    </div>
-    `
-*/
     return `
     <div class= "col-4" id="contenedor">
         <div class="card mb-3">
-            <div class='imagecard bg-light'>
-                <img src="${links ? links[0].href: ''}">
+            <div class='imagecard bg-light text-dark text-wrap'>
+                ${links ? "<img src='"+links[0].href+"'>" : data[0].title}
             </div>
             
             <div class="card-body text-dark">
