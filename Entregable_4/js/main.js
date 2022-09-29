@@ -65,8 +65,8 @@ function mostrarSeries(seriesMostrar){
 
         htmlcontenttoAppend += `
         
-        <li class="list-group-item-action d-flex justify-content-between align-items-start bg-dark p-2 m-2 Border-bottom border-muted">
-            <div class="ms-2 me-auto text-white">
+        <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-start bg-dark p-2 m-2 border-muted border-bottom" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop" onclick="infoSerie(${seriesMostrar[i].id})">
+            <div class="ms-2 me-auto text-white ">
                 <div class="fw-bold">${seriesMostrar[i].title}</div>
                 <span class="text-muted">${seriesMostrar[i].tagline}</span>
             </div>
@@ -91,4 +91,36 @@ function drawStars(stars) {
     }
 
     return htmlContentToAppend;
+}
+
+function infoSerie(seriesMostrar){
+    let serie = seriesLista.filter(elem => elem.id === seriesMostrar);
+    let generos = serie[0].genres.map(a => a.name);
+    console.log(generos);
+
+    console.log(serie);
+    let htmlContentToAppend = "";
+
+    htmlContentToAppend += `
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasTopLabel">${serie[0].title}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body overflow-show">
+            <p>${serie[0].overview}</p>
+            <span class="text-muted">${generos.join(" - ")}</span>
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown button
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+        </div>
+        
+    `;
+    document.querySelector("#offcanvasTop").innerHTML = htmlContentToAppend;
 }
