@@ -96,9 +96,10 @@ function drawStars(stars) {
 function infoSerie(seriesMostrar){
     let serie = seriesLista.filter(elem => elem.id === seriesMostrar);
     let generos = serie[0].genres.map(a => a.name);
-    console.log(generos);
+    let fecha = new Date(serie[0].release_date);
 
-    console.log(serie);
+    console.log(fecha);
+
     let htmlContentToAppend = "";
 
     htmlContentToAppend += `
@@ -110,14 +111,15 @@ function infoSerie(seriesMostrar){
             <p>${serie[0].overview}</p>
             <span class="text-muted">${generos.join(" - ")}</span>
         </div>
-        <div class="dropdown">
+        <div class="dropdown d-flex justify-content-end">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown button
+                More info
             </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <ul class="dropdown-menu p-2">
+                <li>Year: ${fecha.getFullYear()}</li>
+                <li>Runtime:  ${serie[0].runtime} mins.</li>
+                <li>Budget: $ ${serie[0].budget}</li>
+                <li>Revenue: $ ${serie[0].revenue}</li>
             </ul>
         </div>
         
