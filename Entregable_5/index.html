@@ -21,30 +21,83 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Dolor</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Sit</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="#">Amet</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-            </ul>
-            <form class="d-flex mt-3 mt-lg-0">
+          <div class="collapse navbar-collapse justify-content-between" id="navbarScroll">
+            <form class="d-flex mt-3 mt-lg-0 order-lg-2">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             </form>
+            <ul class="navbar-nav justify-content-around">
+              <li class="nav-item order-1">
+                <a class="nav-link active" aria-current="page" href="#">Dolor</a>
+              </li>
+              <li class="nav-item order-1">
+                <a class="nav-link" href="#">Sit</a>
+              </li>
+              <li class="nav-item order-1 dropdown">
+                <a class="nav-link" href="#">Amet</a>
+              </li>
+              <li class="nav-item order-1 d-lg-none" onclick="mostrarOpciones()">
+                <a class="nav-link" href="#">Opciones</a>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
   </header>
   <main>
-
+    <div class="row mt-5 d-none d-lg-block mx-auto text-center cabecera">
+      <h2>Lorem ipsum...</h2>
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <p class="h5">...dolor sit amet consectetur adipisicing elit. Quasi adipisci, architecto</p> 
+          </div>
+          <div class="carousel-item">
+            <p class="h5">...expedita dolores, animi esse deleniti pariatur modi, minus consequatur vitae</p>
+          </div>
+          <div class="carousel-item">
+            <p class="h5">optio nisi nulla? Minima, excepturi repudiandae. Culpa, nemo excepturi?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-lg container-sm">
+      <div class="row g-4 mt-1">
+        <div class="col-12 col-lg-3 d-lg-block d-none list-group text-decoration-underline mt-1 px-3" id="opt">
+          <a href="" class="list-group-item p-3 border rounded">Opción 1</a>
+          <a href="" class="list-group-item p-3 border rounded">Opción 2</a>
+          <a href="" class="list-group-item p-3 border rounded">Opción 3</a>
+          <a href="" class="list-group-item p-3 border rounded">Opción 4</a>
+        </div>
+        <div class="col-lg-9 col-12 mt-1">
+          <div class="row gy-3">
+            <div class="col-12 col-md-6 col-lg-4 bg-light">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsum voluptates excepturi qui quia alias perferendis sit nam nemo animi. Architecto earum quod ut sequi at? Nobis quasi dolore veritatis!</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 bg-light">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsum voluptates excepturi qui quia alias perferendis sit nam nemo animi. Architecto earum quod ut sequi at? Nobis quasi dolore veritatis!</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 bg-light">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsum voluptates excepturi qui quia alias perferendis sit nam nemo animi. Architecto earum quod ut sequi at? Nobis quasi dolore veritatis!</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 bg-light">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsum voluptates excepturi qui quia alias perferendis sit nam nemo animi. Architecto earum quod ut sequi at? Nobis quasi dolore veritatis!</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 bg-light">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsum voluptates excepturi qui quia alias perferendis sit nam nemo animi. Architecto earum quod ut sequi at? Nobis quasi dolore veritatis!</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 bg-light">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsum voluptates excepturi qui quia alias perferendis sit nam nemo animi. Architecto earum quod ut sequi at? Nobis quasi dolore veritatis!</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 bg-light">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsum voluptates excepturi qui quia alias perferendis sit nam nemo animi. Architecto earum quod ut sequi at? Nobis quasi dolore veritatis!</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 bg-light">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsum voluptates excepturi qui quia alias perferendis sit nam nemo animi. Architecto earum quod ut sequi at? Nobis quasi dolore veritatis!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   <footer>
     <!-- place footer here -->
@@ -53,7 +106,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
   </script>
-
+  <script src="js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>

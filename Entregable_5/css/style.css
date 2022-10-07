@@ -1,3 +1,11 @@
 .bg-gray{
     background-color: #697177;
 }
+
+.cabecera{
+    max-width: 40%;
+}
+
+#navbarScroll ul {
+    width: 40%;
+}
