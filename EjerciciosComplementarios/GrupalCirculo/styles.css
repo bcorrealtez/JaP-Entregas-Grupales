@@ -1,0 +1,17 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.cnt {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.cir {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: red;
+    border-radius: 50%;
+}
