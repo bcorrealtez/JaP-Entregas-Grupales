@@ -10,11 +10,28 @@
       .forEach(function (form) {
         form.addEventListener('submit', function (event) {
           if (!form.checkValidity()) {
+            validarContrasenas()
             event.preventDefault()
             event.stopPropagation()
+          
           }
-  
+          
           form.classList.add('was-validated')
         }, false)
       })
   })()
+
+  const pass1 = document.getElementById("password1");
+  const pass2 = document.getElementById("password2");
+
+  function validarContrasenas(){
+    if(pass2.value === pass1.value && pass1.checkValidity()){
+      pass2.setCustomValidity("");
+    } 
+    else {
+      pass2.setCustomValidity('Debe ser igual a "contraseña"');
+    }
+    pass2.reportValidity();
+  }
+
+  pass2.addEventListener("input", validarContrasenas);
