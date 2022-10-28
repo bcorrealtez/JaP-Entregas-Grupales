@@ -1,145 +1,158 @@
-let mostrarOperacion = document.getElementById("operacion");
-let mostrarNumeros = document.getElementById("numeros");
-let suma = document.getElementById("suma");
-let resta = document.getElementById("resta");
-let producto = document.getElementById("producto");
-let division = document.getElementById("division");
-let cero = document.getElementById("cero");
-let uno = document.getElementById("uno");
-let dos = document.getElementById("dos");
-let tres = document.getElementById("tres");
-let cuatro = document.getElementById("cuatro");
-let cinco = document.getElementById("cinco");
-let seis = document.getElementById("seis");
-let siete = document.getElementById("siete");
-let ocho = document.getElementById("ocho");
-let nueve = document.getElementById("nueve");
-let punto = document.getElementById("punto");
-let borrar = document.getElementById("borrar");
-let igual = document.getElementById("igual");
-let operacion = "";
-let resultado1 = "";
-let resultado2 = "";
+var mostrarOperacion = document.getElementById("operacion");
+var mostrarNumeros = document.getElementById("numeros");
+var suma = document.getElementById("suma");
+var resta = document.getElementById("resta");
+var producto = document.getElementById("producto");
+var division = document.getElementById("division");
+var cero = document.getElementById("cero");
+var uno = document.getElementById("uno");
+var dos = document.getElementById("dos");
+var tres = document.getElementById("tres");
+var cuatro = document.getElementById("cuatro");
+var cinco = document.getElementById("cinco");
+var seis = document.getElementById("seis");
+var siete = document.getElementById("siete");
+var ocho = document.getElementById("ocho");
+var nueve = document.getElementById("nueve");
+var punto = document.getElementById("punto");
+var borrar = document.getElementById("borrar");
+var igual = document.getElementById("igual");
+var operacion = "";
+var operando1 = "";
+var operando2 = "";
+var resultado = ""
 
-cero.addEventListener("click", (e)=>{
-        resultado1 += "0";
+cero.addEventListener("click", (e) => {
+    operando1 += "0";
+    mostrarNumeros.innerHTML = operando1;
+})
 
-        mostrarNumeros.innerHTML = resultado1;
-    })
+uno.addEventListener("click", (e) => {
+    operando1 += "1";
+    mostrarNumeros.innerHTML = operando1;
+})
 
-uno.addEventListener("click", (e)=>{
-        resultado1 += "1";
+dos.addEventListener("click", (e) => {
+    operando1 += "2";
+    mostrarNumeros.innerHTML = operando1;
+})
 
-        mostrarNumeros.innerHTML = resultado1;
-    })
+tres.addEventListener("click", (e) => {
+    operando1 += "3";
+    mostrarNumeros.innerHTML = operando1;
+})
 
-dos.addEventListener("click", (e)=>{
-        resultado1 += "2";
+cuatro.addEventListener("click", (e) => {
+    operando1 += "4";
+    mostrarNumeros.innerHTML = operando1;
+})
 
-        mostrarNumeros.innerHTML = resultado1;
-    })
+cinco.addEventListener("click", (e) => {
+    operando1 += "5";
+    mostrarNumeros.innerHTML = operando1;
+})
 
-tres.addEventListener("click", (e)=>{
-        resultado1 += "3";
+seis.addEventListener("click", (e) => {
+    operando1 += "6";
+    mostrarNumeros.innerHTML = operando1;
+})
 
-        mostrarNumeros.innerHTML = resultado1;
-    })
+siete.addEventListener("click", (e) => {
+    operando1 += "7";
+    mostrarNumeros.innerHTML = operando1;
+})
 
-cuatro.addEventListener("click", (e)=>{
-        resultado1 += "4";
+ocho.addEventListener("click", (e) => {
+    operando1 += "8";
+    mostrarNumeros.innerHTML = operando1;
+})
 
-        mostrarNumeros.innerHTML = resultado1;
-    })
+nueve.addEventListener("click", (e) => {
+    operando1 += "9";
+    mostrarNumeros.innerHTML = operando1;
+})
 
-cinco.addEventListener("click", (e)=>{
-        resultado1 += "5";
+punto.addEventListener("click", (e) => {
+    operando1 += ".";
+    mostrarNumeros.innerHTML = operando1;
+})
 
-        mostrarNumeros.innerHTML = resultado1;
-    })
+suma.addEventListener("click", (e) => {
+    operacion = "+";
+    if (!operando1 || !operando2) {
+        operando2 = operando1;
+        mostrarNumeros.innerHTML = operando2;
+        operando1 = ""
+    }
+    mostrarOperacion.innerHTML = operacion;
 
-seis.addEventListener("click", (e)=>{
-        resultado1 += "6";
+})
 
-        mostrarNumeros.innerHTML = resultado1;
-    })
+resta.addEventListener("click", (e) => {
+    operacion = "-";
+    if (operando2) {
+        operaciones()
+        mostrarNumeros.innerHTML = resultado;
+    } else {
+        operando2 = operando1;
+        mostrarNumeros.innerHTML = operando2;
+    }
+    operando1 = ""
+    mostrarOperacion.innerHTML = operacion;
+})
 
-siete.addEventListener("click", (e)=>{
-        resultado1 += "7";
+producto.addEventListener("click", (e) => {
+    operacion = "*";
+    if (operando1 && operando2) {
+        operaciones()
+        mostrarNumeros.innerHTML = resultado;
+    } else {
+        operando2 = operando1;
+        mostrarNumeros.innerHTML = operando2;
+    }
+    operando1 = ""
+    mostrarOperacion.innerHTML = operacion;
+})
 
-        mostrarNumeros.innerHTML = resultado1;
-    })
+division.addEventListener("click", (e) => {
+    operacion = "/";
+    if (operando1 && operando2) {
+        operaciones()
+        mostrarNumeros.innerHTML = resultado;
+    } else {
+        operando2 = operando1;
+        mostrarNumeros.innerHTML = operando2;
+    }
+    operando1 = ""
+    mostrarOperacion.innerHTML = operacion;
+})
 
-ocho.addEventListener("click", (e)=>{
-        resultado1 += "8";
+borrar.addEventListener("click", (e) => {
+    operando1 = operando1.slice(0, -1);
 
-        mostrarNumeros.innerHTML = resultado1;
-    })
+    mostrarNumeros.innerHTML = operando1;
+})
 
-nueve.addEventListener("click", (e)=>{
-        resultado1 += "9";
+igual.addEventListener('click', () => {
+    switch (operacion) {
+        case "+":
+            resultado = parseInt(operando1) + parseInt(operando2);
+            mostrarNumeros.innerHTML = resultado;
+            break;
 
-        mostrarNumeros.innerHTML = resultado1;
-    })
+        case "-":
+            resultado = parseInt(operando2) - parseInt(operando1);
+            break;
 
-punto.addEventListener("click", (e)=>{
-        resultado1 += ".";
+        case "*":
+            resultado = parseInt(operando1) * parseInt(operando2);
+            break;
 
-        mostrarNumeros.innerHTML = resultado1;
-    })
+        case "/":
+            resultado = parseInt(operando1) / parseInt(operando2);
+            break;
 
-suma.addEventListener("click", (e)=>{
-        operacion = "+";
-        if(resultado2){
-            resultado2 = parseInt(resultado1)+parseInt(resultado2);
-        } else {
-            resultado2 = resultado1;
-        }
-        resultado1 = "";
-        mostrarOperacion.innerHTML = operacion;
-        mostrarNumeros.innerHTML = resultado2;
-    })
-
-resta.addEventListener("click", (e)=>{
-        operacion = "-";
-
-        if(resultado2){
-            resultado2 = (parseInt(resultado2)) - (parseInt(resultado1));
-        } else {
-            resultado2 = resultado1;
-        }
-        resultado1 = "";
-        mostrarOperacion.innerHTML = operacion;
-        mostrarNumeros.innerHTML = resultado2;
-    })
-
-producto.addEventListener("click", (e)=>{
-        operacion = "x";
-
-        if(resultado2){
-            resultado2 = parseInt(resultado1) * parseInt(resultado2);
-        } else {
-            resultado2 = resultado1;
-        }
-        resultado1 = "";
-        mostrarOperacion.innerHTML = operacion;
-        mostrarNumeros.innerHTML = resultado2;
-    })
-
-division.addEventListener("click", (e)=>{
-        operacion = "/";
-
-        if(resultado2){
-            resultado2 = parseInt(resultado2) / parseInt(resultado1);
-        } else {
-            resultado2 = resultado1;
-        }
-        resultado1 = "";
-        mostrarOperacion.innerHTML = operacion;
-        mostrarNumeros.innerHTML = resultado2;
-    })
-
-borrar.addEventListener("click", (e)=>{ 
-    resultado1 = resultado1.slice(0, -1);
-
-    mostrarNumeros.innerHTML = resultado1;
-    })
+        default:
+            break;
+    }
+})
