@@ -10,77 +10,79 @@
 </head>
 <body>
     <main>
-    <div class="container position-absolute top-50 start-50 translate-middle p-3" id="calculadora">
+    <div class="container position-absolute top-50 start-50 translate-middle p-4" id="calculadora">
         <div class="container" id="operacion">
             <p></p>
         </div>
         <div class="container" id="numeros">
             <p></p>
         </div>
-        <div class="row g-2">
-            <div class="col-3" id="suma">
-                <p class="comun">+</p>
-            </div>
-            <div class="col-3" id="resta">
-                <p class="comun">-</p>
-            </div>
-            <div class="col-3" id="producto">
-                <p class="comun">x</p>
-            </div>
-            <div class="col-3" id="division">
-                <p class="comun">/</p>
+        <div class="container" id="btnOp">
+            <div class="row justify-content-between">
+                <div class="col-3 btn" id="suma">
+                    <p class="comun">+</p>
+                </div>
+                <div class="col-3 btn" id="resta">
+                    <p class="comun">-</p>
+                </div>
+                <div class="col-3 btn" id="producto">
+                    <p class="comun">x</p>
+                </div>
+                <div class="col-3 btn" id="division">
+                    <p class="comun">/</p>
+                </div>
             </div>
         </div>
-        <div class="row g-2">
+        <div class="row g-2 justify-content-between">
             <div class="col-9">
-                <div class="row g-2">
-                    <div class="col-4" id="siete">
+                <div class="row justify-content-between">
+                    <div class="col-4 btn" id="siete">
                         <p>7</p>
                     </div>
-                    <div class="col-4" id="ocho">
+                    <div class="col-4 btn" id="ocho">
                         <p>8</p>
                     </div>
-                    <div class="col-4" id="nueve">
+                    <div class="col-4 btn" id="nueve">
                         <p>9</p>
                     </div>
                 </div>
-                <div class="row g-2">
-                    <div class="col-4" id="cuatro">
+                <div class="row justify-content-between">
+                    <div class="col-4 btn" id="cuatro">
                         <p>4</p>
                     </div>
-                    <div class="col-4" id="cinco">
+                    <div class="col-4 btn" id="cinco">
                         <p>5</p>
                     </div>
-                    <div class="col-4" id="seis">
+                    <div class="col-4 btn" id="seis">
                         <p>6</p>
                     </div>
                 </div>
-                <div class="row g-2">
-                    <div class="col-4" id="uno">
+                <div class="row justify-content-between">
+                    <div class="col-4 btn" id="uno">
                         <p>1</p>
                     </div>
-                    <div class="col-4" id="dos">
+                    <div class="col-4 btn" id="dos">
                         <p>2</p>
                     </div>
-                    <div class="col-4" id="tres">
+                    <div class="col-4 btn" id="tres">
                         <p>3</p>
                     </div>
                 </div>
-                <div class="row g-2">
-                    <div class="col-4" id="cero">
+                <div class="row justify-content-between">
+                    <div class="col-4 btn" id="cero">
                         <p>0</p>
                     </div>
-                    <div class="col-4" id="punto">
+                    <div class="col-4 btn" id="punto">
                         <p>.</p>
                     </div>
-                    <div class="col-4" id="borrar">
+                    <div class="col-4 btn" id="borrar">
                         <p>c</p>
                     </div>
                 </div>
             </div>
-            <div class="col-3 ">
-                <div class="h-100 " id="igual">
-                    <p>=</p>
+            <div class="col-3 btn" id="btnIgual">
+                <div class="h-100 ">
+                    <p >=</p>
                 </div>
             </div>
         </div>

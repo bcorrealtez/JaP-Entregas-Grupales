@@ -1,23 +1,27 @@
+body{
+    background-color: rgb(63, 17, 161);
+}
+
 #calculadora{
     background-color: #475569;
     width: 300px;
     border-radius: 15px;
     color: white;
+    box-shadow:
+       inset 0 -3em 3em rgba(0,0,0,0.1),
+             0 0  0 2px rgb(255,255,255),
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
 
 #suma, #resta, #producto, #division{
     background-color: #94A3B8;
+    height: 60px;
+    width: auto;
     aspect-ratio: 1/1;
     border-radius: 50%; 
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-#igual{
-    background-color: #A78BFA;
-    border-radius: 20px;
-
 }
 
 .comun{
@@ -32,3 +36,26 @@
     justify-content: center;
 }
 
+#operacion, #numeros{
+    height: 50px;
+}
+
+#btnOp{
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+#btnIgual{
+    text-align: center;
+    align-content: center;
+    background-color: #A78BFA;
+    border-radius: 20px;
+}
+
+.btn{
+    color: white;
+    box-shadow:
+    inset 0 -3em 3em rgba(0,0,0,0.1),
+          0 0  0 1px rgb(255,255,255),
+          0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
