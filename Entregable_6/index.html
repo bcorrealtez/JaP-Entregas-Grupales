@@ -63,9 +63,7 @@
               <button type="button" class="btn btn-link ps-0 position-relative" data-bs-toggle="modal"
                 data-bs-target="#modalTerminos" required>Términos del servicio
               </button>
-              <div class="invalid-feedback">
-                Debe aceptar los terminos del servicio
-              </div>
+              <div id="terminosServicios"></div>
                 
             </div>
 
@@ -91,7 +89,9 @@
                 <div class="form-check">
                   <input type="checkbox" class="form-check-input" id="terminos" value="" required>
                   <label class="form-check-label" for="terminos">Acepto los términos y condiciones del servicio.</label>
-                 
+                  <div class="terminos-feedback">
+                    Debe aceptar los términos y condiciones.
+                  </div>
                 </div>
               </div>
             </div>

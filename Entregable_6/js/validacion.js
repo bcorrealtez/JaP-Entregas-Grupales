@@ -11,6 +11,7 @@
         form.addEventListener('submit', function (event) {
           if (!form.checkValidity()) {
             validarContrasenas()
+            validarTerminos()
             event.preventDefault()
             event.stopPropagation()
           
@@ -35,3 +36,16 @@
   }
 
   pass2.addEventListener("input", validarContrasenas);
+
+  function validarTerminos(){
+    const checkbox = document.getElementById("terminos");
+    const terminosServicios = document.getElementById("terminosServicios");
+    
+    var checked = checkbox.checked;
+    if(!checked){
+      console.log("no está seleccionado");
+      let htmlContentToAppend = "No se aceptaron los términos y servicios";
+      
+      terminosServicios.innerHTML = htmlContentToAppend;
+    }
+  }
