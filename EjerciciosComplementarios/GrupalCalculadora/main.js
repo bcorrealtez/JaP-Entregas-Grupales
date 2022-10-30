@@ -138,6 +138,8 @@ igual.addEventListener('click', () => {
         case "+":
             resultado = parseInt(operando1) + parseInt(operando2);
             mostrarNumeros.innerHTML = resultado;
+            operando2 = "";
+            operando1 = "";
             break;
 
         case "-":

@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(63, 17, 161);
+    background-color: rgb(44, 12, 113);
 }
 
 #calculadora{
@@ -22,34 +22,40 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 .comun{
     margin: 0px;
 }
 
-#numeracion{
-    aspect-ratio: 1/1;
-    border-radius: 50%; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 #operacion, #numeros{
     height: 50px;
+    background-color: rgb(234, 234, 234);
+    text-align: right;
+    color: black;
+    font-size: xx-large;
+    font-weight: bold;
+    width: 270px;
+    margin-left: -20px;
+    margin-bottom: 10px;
+    border: 2px solid;
+    border-color: rgb(134, 133, 133);
 }
 
 #btnOp{
     height: 100%;
-    margin-bottom: 10px;
 }
 
-#btnIgual{
+#igual{
     text-align: center;
     align-content: center;
     background-color: #A78BFA;
     border-radius: 20px;
+    padding-top: 90px;
+    font-weight: bold;
+    font-size: large;
 }
 
 .btn{
@@ -58,4 +64,14 @@ body{
     inset 0 -3em 3em rgba(0,0,0,0.1),
           0 0  0 1px rgb(255,255,255),
           0.3em 0.3em 1em rgba(0,0,0,0.3);
+    font-weight: bold;
+    width: 55px;
+    aspect-ratio: 1/1;
+    height: auto;
+    margin-bottom: 10px;
+    background-color: rgb(134, 133, 133);
+}
+
+#btnNum{
+    width: 265px;
 }
