@@ -2,7 +2,7 @@
   max-width: 960px;
 }
 
-#terminosServicios{
-  color: red;
-  font-size: small;
+#invisible {
+  position: relative;
+  
 }

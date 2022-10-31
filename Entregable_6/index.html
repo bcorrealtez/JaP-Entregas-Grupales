@@ -59,18 +59,13 @@
               </div>
             </div>
 
-            <div class="col-sm-12">
-              <button type="button" class="btn btn-link ps-0 position-relative" data-bs-toggle="modal"
-                data-bs-target="#modalTerminos" required>Términos del servicio
-              </button>
-              <div id="terminosServicios"></div>
-                
+            <div class="col-sm-12 d-flex">
+              <label class="text-decoration-underline ps-0" id="labelterminos" data-bs-toggle="modal"
+                data-bs-target="#modalTerminos">Términos del servicio
+              </label>
+              <label for="terminos" class="invalid-feedback w-50 ms-2">Debe aceptar los términos del servicio.</label> 
             </div>
-
-
             <button class="btn btn-primary" type="submit">Registrarme</button>
-
-
           </div>
         </div>
         <div class="modal fade" id="modalTerminos" tabindex="-1" aria-hidden="true">
@@ -81,17 +76,16 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quasi sapiente voluptatum deserunt?
-                  Deleniti, adipisci vitae in quaerat eius nemo optio? Quas at magni saepe cumque. Delectus perspiciatis omnis
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quasi sapiente voluptatum
+                  deserunt?
+                  Deleniti, adipisci vitae in quaerat eius nemo optio? Quas at magni saepe cumque. Delectus perspiciatis
+                  omnis
                   accusamus.</p>
               </div>
               <div class="modal-footer">
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="terminos" value="" required>
+                  <input type="checkbox" class="form-check-input" id="terminos" required>
                   <label class="form-check-label" for="terminos">Acepto los términos y condiciones del servicio.</label>
-                  <div class="terminos-feedback">
-                    Debe aceptar los términos y condiciones.
-                  </div>
                 </div>
               </div>
             </div>
@@ -108,7 +102,7 @@
     </footer>
   </div>
 
- 
+
 
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/validacion.js"></script>
