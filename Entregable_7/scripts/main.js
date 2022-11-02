@@ -1,4 +1,5 @@
-const url = "https://6361aa6167d3b7a0a6cad6ee.mockapi.io/users/";
+/*const url = "https://6361aa6167d3b7a0a6cad6ee.mockapi.io/users/"; //Bruno */
+const url = "https://6361a80267d3b7a0a6cab68d.mockapi.io/users/"; //paola
 const data = { name: "", lastname: "" };
 
 const buscar = document.getElementById("btnGet1");
@@ -7,6 +8,7 @@ const modificar = document.getElementById("btnPut");
 const borrar = document.getElementById("btnDelete");
 const nomPost = document.getElementById("inputPostNombre");
 const apePost = document.getElementById("inputPostApellido");
+const results = document.getElementById("results");
 
 document.getElementById("post-box").addEventListener("input", () => {
   if (nomPost.value && apePost.value) {
@@ -22,12 +24,19 @@ buscar.addEventListener("click", () => {});
 agregar.addEventListener("click", () => {
     data.name = nomPost.value;
     data.lastname = apePost.value;
-    peticion()
+    peticion("POST");
+    
+    htmlContentToApend = mostrar;
+    results.innerHTML = htmlContentToApend;
 });
 
-modificar.addEventListener("click", () => {});
+modificar.addEventListener("click", () => {
 
-borrar.addEventListener("click", () => {});
+});
+
+borrar.addEventListener("click", () => {
+
+});
 
 function peticion(method) {
   fetch(url, {
