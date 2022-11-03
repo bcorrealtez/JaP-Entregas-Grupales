@@ -11,6 +11,11 @@ const nomPost = document.getElementById("inputPostNombre");
 const apePost = document.getElementById("inputPostApellido");
 const inpDel = document.getElementById("inputDelete");
 const inpGet = document.getElementById("inputGet1Id");
+const inpPut = document.getElementById("inputPutId");
+const alertD = document.getElementById("alert-error");
+
+var getData = [];
+var putData = [];
 
 // INPUT Event
 
@@ -33,6 +38,14 @@ inpDel.addEventListener("input", () => {
   }
 });
 
+inpPut.addEventListener("input", () => {
+  if (inpPut.value) {
+    modificar.removeAttribute("disabled");
+  } else {
+    modificar.setAttribute("disabled", "");
+  }
+});
+
 // CLICK Event
 
 buscar.addEventListener("click", () => {
@@ -41,6 +54,8 @@ buscar.addEventListener("click", () => {
   } else {
     peticion("GET");
   }
+
+  getResults();
 });
 
 agregar.addEventListener("click", () => {
@@ -49,17 +64,30 @@ agregar.addEventListener("click", () => {
   peticion("POST");
 });
 
-modificar.addEventListener("click", () => {});
+modificar.addEventListener("click", () => {
+  fetch(url + inpPut.value, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      alertD.classList.add("show");
+    })
+    .catch((error) => console.error("Error:", error))
+    .then((response) => {
+      putData = [response];
+      console.log("Success:", response);
+    });
+  peticion("GET");
+});
 
 borrar.addEventListener("click", () => {
   peticion("DELETE");
 });
-
-modificar.addEventListener("click", () => {});
-
-borrar.addEventListener("click", () => {});
-
-// RESULTADOS
 
 // FETCH
 
@@ -74,20 +102,33 @@ function peticion(method) {
       })
         .then((res) => res.json())
         .catch((error) => console.error("Error:", error))
-        .then((response) => console.log("Success:", response));
+        .then((response) => {
+          getData = response;
+          getResults();
+          console.log("Success:", response);
+        });
 
       break;
 
     case "GETid":
-      fetch(url+inpGet.value, {
+      fetch(url + inpGet.value, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
       })
-        .then((res) => res.json())
+        .then((res) => {
+          if (res.ok) {
+            return res.json();
+          }
+          alertD.classList.add("show");
+        })
         .catch((error) => console.error("Error:", error))
-        .then((response) => console.log("Success:", response));
+        .then((response) => {
+          getData = [response];
+          getResults();
+          console.log("Success:", response);
+        });
 
       break;
 
@@ -101,28 +142,53 @@ function peticion(method) {
       })
         .then((res) => res.json())
         .catch((error) => console.error("Error:", error))
-        .then((response) => console.log("Success:", response));
+        .then((response) => {
+          peticion("GET");
+          console.log("Success:", response);
+        });
 
       break;
 
     case "PUT":
+      
       break;
 
     case "DELETE":
       fetch(url + inpDel.value, {
         method: "DELETE",
-        body: JSON.stringify(data),
         headers: {
           "Content-Type": "application/json",
         },
       })
-        .then((res) => res.json())
+        .then((res) => {
+          if (res.ok) {
+            return res.json();
+          }
+          alertD.classList.add("show");
+        })
         .catch((error) => console.error("Error:", error))
-        .then((response) => console.log("Success:", response));
+        .then((response) => {
+          peticion("GET");
+          console.log("Success:", response);
+        });
 
       break;
 
     default:
       break;
   }
+}
+
+// RESULTADOS
+function getResults() {
+  let innerText = "";
+  for (let i = 0; i < getData.length; i++) {
+    innerText += `
+    <li>
+      <p>ID: ${getData[i].id}</p>
+      <p>Name: ${getData[i].name}</p>
+      <p>LastName: ${getData[i].lastname}</p>
+    </li>`;
+  }
+  results.innerHTML = innerText;
 }
