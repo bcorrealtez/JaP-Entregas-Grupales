@@ -14,6 +14,11 @@ const inpGet = document.getElementById("inputGet1Id");
 const inpPut = document.getElementById("inputPutId");
 const alertD = document.getElementById("alert-error");
 
+const guardar = document.getElementById("btnSendChanges");
+
+const modalNom = document.getElementById("inputPutNombre");
+const modalApe = document.getElementById("inputPutApellido");
+
 var getData = [];
 var putData = [];
 
@@ -75,14 +80,28 @@ modificar.addEventListener("click", () => {
       if (res.ok) {
         return res.json();
       }
-      alertD.classList.add("show");
+      alerta()
     })
     .catch((error) => console.error("Error:", error))
     .then((response) => {
-      putData = [response];
+      if (response) {
+        putData = response;
+        modalNom.value = putData.name;
+        modalApe.value = putData.lastname;
+        guardar.removeAttribute("disabled");
+      }
       console.log("Success:", response);
     });
-  peticion("GET");
+});
+
+guardar.addEventListener("click", () => {
+  data.name = modalNom.value;
+  data.lastname = modalApe.value;
+
+  modalNom.value = "";
+  modalApe.value = "";
+  guardar.setAttribute("disabled", "");
+  peticion("PUT");
 });
 
 borrar.addEventListener("click", () => {
@@ -121,7 +140,7 @@ function peticion(method) {
           if (res.ok) {
             return res.json();
           }
-          alertD.classList.add("show");
+          alerta()
         })
         .catch((error) => console.error("Error:", error))
         .then((response) => {
@@ -150,7 +169,19 @@ function peticion(method) {
       break;
 
     case "PUT":
-      
+      fetch(url + inpPut.value, {
+        method: "PUT",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .catch((error) => console.error("Error:", error))
+        .then((response) => {
+          peticion("GET");
+          console.log("Success:", response);
+        });
       break;
 
     case "DELETE":
@@ -164,7 +195,7 @@ function peticion(method) {
           if (res.ok) {
             return res.json();
           }
-          alertD.classList.add("show");
+          alerta()
         })
         .catch((error) => console.error("Error:", error))
         .then((response) => {
@@ -191,4 +222,11 @@ function getResults() {
     </li>`;
   }
   results.innerHTML = innerText;
+}
+
+function alerta() {
+  alertD.classList.add("show");
+  setTimeout(() => {
+    alertD.classList.remove("show");
+  }, 3000);
 }
