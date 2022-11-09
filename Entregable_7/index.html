@@ -23,7 +23,7 @@
                     <div class="col-md-6">
                         <div class="border p-3 my-3 position-relative" id="get-box">
                             <h6>Buscar registro</h6>
-                            <input type="number" id="inputGet1Id" class="form-control" oninput="this.value=Math.max(this.value, 1)" placeholder="ID a buscar">
+                            <input type="number" id="inputGet1Id" class="form-control" min="1" placeholder="ID a buscar">
                             <button id="btnGet1" class="btn btn-primary position-absolute bottom-0 mb-3">Buscar</button>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                     <div class="col-md-6">
                         <div class="border p-3 my-3 position-relative" id="put-box">
                             <h6>Modificar registro</h6>
-                            <input type="number" id="inputPutId" oninput="this.value=Math.max(this.value, 1)" class="form-control"
+                            <input type="number" id="inputPutId" min="1" class="form-control"
                                 placeholder="ID del registro a modificar">
                             <button id="btnPut" class="btn btn-warning position-absolute bottom-0 mb-3" data-bs-target="#dataModal" data-bs-toggle="modal" disabled>
                                 Modificar</button>
@@ -50,7 +50,7 @@
                     <div class="col-md-6">
                         <div class="border p-3 my-3 position-relative" id="delete-box">
                             <h6>Eliminar registro</h6>
-                            <input type="number" id="inputDelete" class="form-control" oninput="this.value=Math.max(this.value, 1)" placeholder="ID a eliminar">
+                            <input type="number" id="inputDelete" class="form-control" min="1" placeholder="ID a eliminar">
                             <button id="btnDelete" class="btn btn-danger position-absolute bottom-0 mb-3" disabled>
                                 Borrar</button>
                         </div>
